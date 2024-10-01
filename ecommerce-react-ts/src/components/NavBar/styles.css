@@ -1,0 +1,18 @@
+
+.BrandName {
+    background-color: black;
+    color: white !important;
+    font-size: 24px;
+    padding:  10px;
+    font-size: 20px !important;
+}
+.ul-link {
+    color: rgb(8, 116, 239) !important;
+    font-size: 20px !important;
+}
+.fs-16{
+    font-size: 16px;
+}
+.navbar-custom {
+    margin: 36px 36px;
+}
