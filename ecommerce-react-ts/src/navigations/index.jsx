@@ -7,6 +7,7 @@ import Cart from '../containers/CartContainer';
 import NoRouteFound from "../components/NoRouteFound";
 
 const MainNavigator = () => {
+   
     return (
         
         <BrowserRouter>

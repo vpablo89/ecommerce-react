@@ -2,9 +2,6 @@ import React, { useContext, useState } from 'react'
 import TableRow from './TableRow'
 import { Shop } from '../../context/ShopProvider';
 import generateOrderObject from '../../services/generateOrderObject';
-import { collection, addDoc } from "firebase/firestore"; 
-import { db } from '../../firebase/config';
-import { doc, updateDoc } from "firebase/firestore";
 import FormComp from '../../components/Form';
 import Spinner from 'react-bootstrap/Spinner';
 import NoProducts from '../../components/NoProducts';
@@ -33,34 +30,35 @@ const Cart = () => {
         cart: products,
         total: total()
       })
+
+      console.log(order)
+      console.log(cleanCart)
   
       
-      console.log(order);
   
   
       // Add a new document with a generated id.
-      const docRef = await addDoc(collection(db, "orders"), order);
-      cleanCart()
-      //Posteriormente actualizar el stock de los productos existentes.
-      for (const productCart of products) {
-        const productRef = doc(db, "products", productCart.id);
+      // const docRef = await addDoc(collection(db, "orders"), order);
+      // cleanCart()
+      // //Posteriormente actualizar el stock de los productos existentes.
+      // for (const productCart of products) {
+      //   const productRef = doc(db, "products", productCart.id);
 
-        // Set the "capital" field of the city 'DC'
-        await updateDoc(productRef, {
-          stock: productCart.stock - productCart.quantity
-        });
-      }
+      //   // Set the "capital" field of the city 'DC'
+      //   await updateDoc(productRef, {
+      //     stock: productCart.stock - productCart.quantity
+      //   });
+      // }
 
       // alert("Orden confirmada con ID: " + docRef.id);
       Swal.fire({
         title: 'Compra exitosa',
-        text: 'Orden confirmada con ID:'+ docRef.id,
+        text: 'Orden confirmada con ID:' /*docRef.id*/,
         icon: 'success',
         confirmButtonText: 'OK'
       })
       
     } catch (error) {
-      console.log(error);
     } finally {
       setLoader(false);
       setFormVis(false);

@@ -16,11 +16,9 @@ const saveFromJSONToFirebase = async () => {
                 stock: product.stock || 10,
                 category: product.category,
             });
-            console.log("Document written with ID: ", docRef.id);
         })
         
     } catch (error) {
-        console.log(error)
     }
 }
 

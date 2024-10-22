@@ -3,8 +3,7 @@
 }
 
 input {
-    width: 100%;
-    background-color:rgb(8, 116, 239) !important;
+    width: 100%;    
     border-radius: 30px;
     color: whitesmoke;
     font-weight: bolder;

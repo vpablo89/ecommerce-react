@@ -8,6 +8,7 @@ const ItemList = ({productos}) => {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
+      background: 'rgba(0,0,0,0.1)',
       justifyContent: 'center',
       alignItems: 'center',
       gap: 30,
